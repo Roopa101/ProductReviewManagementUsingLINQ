@@ -29,7 +29,7 @@ namespace ProductManagementUsingLINQ
             Management management = new Management();
             while (flag)
             {
-                Console.WriteLine("Specify the Number To Excute USE CASE Wise Problems:-- \n 1. Displaying ADD List \n 2. Top Three Records According to Rating \n 3. Retrieve Records using Product ID which is Rating > 3 \n 4. The Number of Records of ProductID \n 5. Retrieve Product ID and Review \n 6. Skip Top Five Records \n 7. Retrieve Product ID and Review \n 8. Product Review of Datatable \n 9. Retrieve Records From DataTable \n 10. Average ProductID \n 11. RetrieveReviewofNice\n  12. Exit");
+                Console.WriteLine("Specify the Number To Excute USE CASE Wise Problems:-- \n 1. Displaying ADD List \n 2. Top Three Records According to Rating \n 3. Retrieve Records using Product ID which is Rating > 3 \n 4. The Number of Records of ProductID \n 5. Retrieve Product ID and Review \n 6. Skip Top Five Records \n 7. Retrieve Product ID and Review \n 8. Product Review of Datatable \n 9. Retrieve Records From DataTable \n 10. Average ProductID \n 11. RetrieveReviewofNice\n 12. RetrieveAllRecords\n  13. Exit");
                 int number = Convert.ToInt32(Console.ReadLine());
                 switch (number)
                 {
@@ -68,6 +68,9 @@ namespace ProductManagementUsingLINQ
                         management.RetrieveReviewofNice(productList, "Nice");
                         break;
                     case 12:
+                        management.RetrieveRecordsUsingUserID();
+                        break;
+                    case 13:
                         flag = false;
                         break;
                 }

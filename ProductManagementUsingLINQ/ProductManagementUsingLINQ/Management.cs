@@ -70,7 +70,7 @@ namespace ProductManagementUsingLINQ
         }
         public void RetrieveRecordsFromDataTable(List<ProductReview> productList)
         {
-          
+
             var productTable = from Product in this.dataTable.AsEnumerable() where Product.Field<bool>("ISLike").Equals(true) select Product;
             foreach (DataRow Product in productTable)
             {
@@ -93,7 +93,15 @@ namespace ProductManagementUsingLINQ
                 Console.WriteLine("ProductID : {0} \t UserID : {1} \t Rating : {2} \t Review : {3} \t ISLike : {4}", pro.ProductID, pro.UserID, pro.Rating, pro.Review, pro.ISLike);
             }
         }
-       
+        public void RetrieveRecordsUsingUserID()
+        {
+            var productTable = from Product in this.dataTable.AsEnumerable() where Product.Field<int>("UserID") == 10 select Product;
+            foreach (DataRow Product in productTable)
+            {
+                Console.WriteLine("ProductID : " + Product.Field<int>("ProductID") + "\t" + "UserID : " + Product.Field<int>("UserID") + "\t" + "Rating : " + Product.Field<int>("Rating") + "\t" + "Review : " + Product.Field<string>("Review") + "\t" + "ISLike : " + Product.Field<bool>("ISLike"));
+            }
+        }
+
     }
 }
        
