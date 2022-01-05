@@ -50,7 +50,7 @@ namespace ProductManagementUsingLINQ
                         break;
                     case 6:
                         management.SkipTopFiveRecords(productList);
-                        Console.WriteLine("Top Five records are Skipped, And Above records are Remaining Records");
+                        Console.WriteLine("Top Five records are Skipped");
                         break;
                     case 7:
                         flag = false;

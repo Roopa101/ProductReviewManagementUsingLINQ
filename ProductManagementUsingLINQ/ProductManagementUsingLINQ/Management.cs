@@ -31,7 +31,7 @@ namespace ProductManagementUsingLINQ
             
             foreach (var data in records)
             {
-               Console.WriteLine("The Number Of Records of Product ID : {0} is {1} ", data.ProductID, data.Count);
+               Console.WriteLine("Number Of Records of Product ID : {0} is {1} ", data.ProductID, data.Count);
                 
             }
         }
