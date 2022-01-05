@@ -11,6 +11,7 @@ namespace ProductManagementUsingLINQ
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Product Review Management Using LINQ Program ");
+           
             List<ProductReview> productList = new List<ProductReview>
             {
                 new ProductReview(){ProductID=1, UserID=1,Rating=5,Review="Excellent",ISLike=true},
@@ -28,7 +29,7 @@ namespace ProductManagementUsingLINQ
             Management management = new Management();
             while (flag)
             {
-                Console.WriteLine("Specify the Number To Excute USE CASE Wise Problems:-- \n 1. Displaying ADD List \n 2. Top Three Records According to Rating \n 3. Retrieve Records using Product ID which is Rating > 3 \n 4. The Number of Records of ProductID \n 5. Retrieve Product ID and Review \n 6. Exit");
+                Console.WriteLine("Specify the Number To Excute USE CASE Wise Problems:-- \n 1. Displaying ADD List \n 2. Top Three Records According to Rating \n 3. Retrieve Records using Product ID which is Rating > 3 \n 4. The Number of Records of ProductID \n 5. Retrieve Product ID and Review \n 6. Skip Top Five Records \n 7. Exit");
                 int number = Convert.ToInt32(Console.ReadLine());
                 switch (number)
                 {
@@ -48,6 +49,10 @@ namespace ProductManagementUsingLINQ
                         management.RetrieveOnlyproductIDAndReview(productList);
                         break;
                     case 6:
+                        management.SkipTopFiveRecords(productList);
+                        Console.WriteLine("Top Five records are Skipped, And Above records are Remaining Records");
+                        break;
+                    case 7:
                         flag = false;
                         break;
                 }

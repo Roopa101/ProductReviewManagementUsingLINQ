@@ -44,6 +44,11 @@ namespace ProductManagementUsingLINQ
             }
             
         }
+        public void SkipTopFiveRecords(List<ProductReview> productList)
+        {
+            var records = (from Product in productList select Product).Skip(5).ToList();
+            Display(records);
+        }
     }
 }
-     
+        
